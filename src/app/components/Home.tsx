@@ -36,7 +36,7 @@ const HomePage = () => {
             Sudhanand Group
           </div>
           <div className="py-4 md:py-6 flex justify-center items-center w-full md:w-96">
-            <div className="text-neutral-700 text-lg md:text-3xl font-medium font-['Geist'] leading-relaxed md:leading-loose text-center md:text-left">
+            <div className="text-neutral-700 text-lg md:text-2xl font-medium font-['Geist'] leading-relaxed md:leading-loose text-center md:text-left">
               Built on trust, driven by innovation, growing with purpose.
             </div>
           </div>
@@ -256,40 +256,152 @@ const HomePage = () => {
             Sudhanand Group builds sustainable, impactful ventures that empower communities and drive progress for a healthier, smarter future.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-8 md:mt-12">
-            {/* Video 1 */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/wW_WOzha5to?rel=0"
-                title="Healthcare Innovation"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
+          <div className="relative w-full flex items-center mt-8 md:mt-12">
+  {/* Left Arrow - Positioned farther out */}
+  <button
+    className="absolute -left-4 md:-left-8 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 md:p-3 transition-all duration-300 backdrop-blur-md shadow-lg"
+    onClick={() => {
+      const container = document.getElementById("videoScroll");
+      container?.scrollBy({ left: -400, behavior: "smooth" });
+    }}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-5 h-5 md:w-6 md:h-6"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </button>
 
-            {/* Video 2 */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/AYV5wQw0lu4?si=PHUqgleF_0xfGVYk"
-                title="Tech for Good"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
 
-            {/* Video 3 */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/0sWf8vru8t8?si=7-a961Jge8_PQCUl"
-                title="Community Impact"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
-          </div>
+  {/* Scrollable Videos */}
+  <div
+    id="videoScroll"
+    className="flex overflow-x-auto scroll-smooth gap-8 w-full px-10"
+    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+    onMouseEnter={(e) => {
+      e.currentTarget.dataset.autoScroll = 'paused';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.dataset.autoScroll = 'active';
+    }}
+  >
+    <style>{`
+      #videoScroll::-webkit-scrollbar {
+        display: none;
+      }
+    `}</style>
+    
+    {/* Video 1 */}
+    <div className="min-w-[350px] md:min-w-[400px] relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
+      <iframe
+        src="https://www.youtube.com/embed/TkLjQyNti78?si=gwzz4P2OccscW0cg"
+        title="Healthcare Innovation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      ></iframe>
+    </div>
+
+
+    {/* Video 2 */}
+    <div className="min-w-[350px] md:min-w-[400px] relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
+      <iframe
+        src="https://www.youtube.com/embed/fE77gCpSnPM?si=dAKbVoqIIsg8AMbd"
+        title="Healthcare Innovation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      ></iframe>
+    </div>
+
+
+    {/* Video 3 */}
+    <div className="min-w-[350px] md:min-w-[400px] relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
+      <iframe
+        src="https://www.youtube.com/embed/wW_WOzha5to?rel=0"
+        title="Healthcare Innovation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      ></iframe>
+    </div>
+
+
+    {/* Video 4 */}
+    <div className="min-w-[350px] md:min-w-[400px] relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
+      <iframe
+        src="https://www.youtube.com/embed/AYV5wQw0lu4?si=PHUqgleF_0xfGVYk"
+        title="Tech for Good"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      ></iframe>
+    </div>
+
+
+    {/* Video 5 */}
+    <div className="min-w-[350px] md:min-w-[400px] relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
+      <iframe
+        src="https://www.youtube.com/embed/0sWf8vru8t8?si=7-a961Jge8_PQCUl"
+        title="Community Impact"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      ></iframe>
+    </div>
+  </div>
+
+
+  {/* Right Arrow - Positioned farther out */}
+  <button
+    className="absolute -right-4 md:-right-8 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 md:p-3 transition-all duration-300 backdrop-blur-md shadow-lg"
+    onClick={() => {
+      const container = document.getElementById("videoScroll");
+      container?.scrollBy({ left: 400, behavior: "smooth" });
+    }}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-5 h-5 md:w-6 md:h-6"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    </svg>
+  </button>
+  
+  <script dangerouslySetInnerHTML={{__html: `
+    (function() {
+      const container = document.getElementById('videoScroll');
+      if (!container) return;
+      
+      let autoScrollInterval;
+      
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+          if (container.dataset.autoScroll === 'paused') return;
+          
+          if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+            container.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            container.scrollBy({ left: 400, behavior: 'smooth' });
+          }
+        }, 3000);
+      }
+      
+      container.dataset.autoScroll = 'active';
+      startAutoScroll();
+    })();
+  `}} />
+</div>
+
         </div>
       </section>
 
