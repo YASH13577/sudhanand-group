@@ -295,7 +295,19 @@ const HomePage = () => {
         display: none;
       }
     `}</style>
-    
+
+    {/* Video 6 */}
+    <div className="min-w-[350px] md:min-w-[400px] relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
+      <iframe
+        src="https://www.youtube.com/embed/Wazu-Z27wyY?si=IdIU6rK8imatH5fa"
+        title="Our Team"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full"
+      ></iframe>
+    </div>
+
+
     {/* Video 1 */}
     <div className="min-w-[350px] md:min-w-[400px] relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 aspect-video">
       <iframe
@@ -354,6 +366,8 @@ const HomePage = () => {
         className="w-full h-full"
       ></iframe>
     </div>
+
+
   </div>
 
 
